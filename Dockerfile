@@ -19,5 +19,8 @@ ARG PRIVATE_KEY
 ENV SEPOLIA_RPC_URL=$SEPOLIA_RPC_URL
 ENV PRIVATE_KEY=$PRIVATE_KEY
 
+# Run the tests - they will fail because some transactions will not be reverted so I left them failed on purpose
+#RUN npx hardhat test
+
 # Compile and deploy the smart contract
 CMD ["npx", "hardhat", "run", "--network", "sepolia", "scripts/deploy.js"]
